@@ -25,6 +25,13 @@ public class AddressBook {
         return null;
     }
 
+    public void printBuddyInfo(int index)
+    {
+        if (index >= 0 && index < myBuddies.size()) {
+            System.out.println(myBuddies.get(index).name);
+        }
+    }
+
     public static void main (String[] args){
         BuddyInfo BI1 = new BuddyInfo("Tom", "613", "Carleton");
         AddressBook addressBook = new AddressBook();
@@ -32,6 +39,7 @@ public class AddressBook {
         addressBook.removeBuddy(0);
         addressBook.addBuddy(BI1);
         addressBook.removeBuddy(0);
+        addressBook.printBuddyInfo(0);
         //CHANGE
     }
 }
