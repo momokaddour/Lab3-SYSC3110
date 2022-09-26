@@ -30,5 +30,6 @@ public class AddressBook {
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(BI1);
         addressBook.removeBuddy(0);
+        //CHANGE
     }
 }

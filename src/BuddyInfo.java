@@ -32,5 +32,7 @@ public class BuddyInfo {
     {
         BuddyInfo BI1 = new BuddyInfo("Homer", "613-900-3455", "913 V");
         System.out.println("Hello " + BI1.getName());
+
+        //CHANGE
     }
 }
