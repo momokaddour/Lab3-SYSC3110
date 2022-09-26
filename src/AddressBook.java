@@ -1,29 +1,34 @@
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class AddressBook {
 
-    Hashtable<String, String> addressBook;
+    private ArrayList<BuddyInfo> myBuddies;
 
     public AddressBook() {
-        addressBook = new Hashtable<>();
+        myBuddies = new ArrayList<>();
     }
 
-    public void addBuddy(String phoneNumber, String address)
+    public void addBuddy(BuddyInfo addBuddy)
     {
-        addressBook.put(phoneNumber, address);
+        if (addBuddy != null) {
+            myBuddies.add(addBuddy);
+        }
     }
 
-    public void removeBuddy(String phoneNumber)
+    public BuddyInfo removeBuddy(int index)
     {
-        addressBook.remove(phoneNumber);
+        if (index >= 0 && index < myBuddies.size()) {
+            myBuddies.remove(index);
+        }
+
+        return null;
     }
 
     public static void main (String[] args){
-        BuddyInfo BI1 = new BuddyInfo("Homer", "613-900-3455", "913 V");
-        BuddyInfo BI2 = new BuddyInfo("John", "613-901-3455", "81 L");
-        AddressBook addressBook1 = new AddressBook();
-        addressBook1.addBuddy(BI1.phone_number, BI1.address);
-        addressBook1.addBuddy(BI2.phone_number, BI2.address);
-        addressBook1.removeBuddy(BI1.phone_number);
+        BuddyInfo BI1 = new BuddyInfo("Tom", "613", "Carleton");
+        AddressBook addressBook = new AddressBook();
+        addressBook.addBuddy(BI1);
+        addressBook.removeBuddy(0);
     }
 }
